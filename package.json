@@ -1,0 +1,12 @@
+{
+  "name": "moducare-ms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/static-server.js",
+    "serve": "node server/static-server.js"
+  },
+  "description": "ModuCare MS - static SPA with mock API",
+  "author": "",
+  "license": "MIT"
+}

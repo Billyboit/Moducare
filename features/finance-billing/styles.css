@@ -1,0 +1,4 @@
+/* Finance feature basic styles */
+.feature-finance { padding: 12px; }
+.feature-finance table { width:100%; border-collapse:collapse }
+.feature-finance td, .feature-finance th { padding:8px; border-bottom:1px solid var(--border-light) }

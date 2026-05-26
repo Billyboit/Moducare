@@ -1,0 +1,73 @@
+/* ModuCare Design System - main.css */
+/* Reset (opinionated, minimal) */
+:root{
+  /* Map legacy local theme vars to the design-system tokens to ensure
+     the global palette follows the canonical design system. */
+  --mc-bg: var(--surface-page);
+  --mc-surface: var(--surface-sidebar);
+  --mc-muted: var(--text-tertiary);
+  --mc-text: var(--text-primary);
+  --mc-accent: var(--clr-accent-500);
+  --mc-danger: var(--clr-danger);
+  --mc-shadow: rgba(9,17,28,0.12);
+  --mc-gap: var(--sp-3);
+  --mc-radius: var(--border-radius-sm);
+  --mc-sidebar-width: var(--sidebar-width);
+  --mc-header-height: var(--header-height);
+  --mc-font-sans: var(--font-sans);
+}
+
+*{box-sizing:border-box}
+html,body,#mc-app{height:100%;}
+body{margin:0;background:var(--mc-bg);color:var(--mc-text);font-family:var(--mc-font-sans);font-size:13px;line-height:1.4;}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px}
+
+/* Layout */
+.mc-app{display:flex;min-height:100vh}
+.mc-sidebar{width:var(--mc-sidebar-width);background:var(--mc-surface);padding:18px 12px;border-right:1px solid var(--border-light)}
+.mc-main{flex:1;display:flex;flex-direction:column}
+.mc-header{height:var(--mc-header-height);display:flex;align-items:center;justify-content:space-between;padding:8px 16px;border-bottom:1px solid rgba(255,255,255,0.02);background:linear-gradient(180deg,transparent,rgba(255,255,255,0.01))}
+.mc-content{flex:1;overflow:auto;padding:16px;}
+.mc-footer{padding:8px 16px;border-top:1px solid rgba(255,255,255,0.02);font-size:12px;color:var(--mc-muted)}
+
+/* Navigation */
+.mc-brand{font-weight:700;font-size:18px;margin-bottom:12px}
+.mc-nav-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.mc-nav-link{display:block;padding:10px 12px;border-radius:6px;color:var(--mc-text);text-decoration:none}
+.mc-nav-link:focus,.mc-nav-link:hover{background:rgba(255,255,255,0.02);outline:2px solid rgba(0,179,166,0.08)}
+
+/* Admin-only nav hidden by default; shown only when State indicates admin */
+.mc-nav-admin{display:none}
+.mc-nav-admin.visible{display:block}
+
+/* Dashboard improvements: KPI grid and dense table utilities */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+.kpi{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:6px}
+.kpi .value{font-size:20px;font-weight:700}
+.kpi .label{font-size:11px;color:var(--mc-muted)}
+
+.dense-table{width:100%;border-collapse:collapse;font-size:12px}
+.dense-table th,.dense-table td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.dense-table tr:hover{background:rgba(255,255,255,0.01)}
+
+/* Header controls */
+.mc-search input[type=search]{min-width:420px;max-width:720px;padding:8px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--mc-text)}
+.mc-header-actions{display:flex;align-items:center;gap:8px}
+.mc-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--mc-text);padding:6px 8px;border-radius:6px;cursor:pointer}
+.mc-btn:focus{outline:3px solid rgba(0,179,166,0.12)}
+
+/* Dense tables / data grid style for features */
+.mc-table{width:100%;border-collapse:collapse;font-size:12px}
+.mc-table th,.mc-table td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+
+/* High-contrast utility */
+.mc-muted{color:var(--mc-muted)}
+
+/* Feature-level styles should be small and scoped */
+
+/* Print-friendly rules (for reports) */
+@media print{
+  body{color:#000;background:#fff}
+  .mc-sidebar,.mc-header,.mc-footer,.mc-btn{display:none}
+  .mc-content{padding:0;margin:0}
+}

@@ -1,0 +1,5 @@
+/* Admin users table */
+.feature-admin { padding:12px }
+#users-table-wrap table{width:100%;border-collapse:collapse}
+#users-table-wrap th, #users-table-wrap td{padding:8px;border-bottom:1px solid var(--border-light)}
+.user-actions button{margin-right:6px}

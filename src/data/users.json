@@ -1,0 +1,4 @@
+[
+  { "id": 1, "name": "Alice Admin", "email": "alice@acme.org", "role": "admin" },
+  { "id": 2, "name": "Bob Staff", "email": "bob@acme.org", "role": "staff" }
+]
