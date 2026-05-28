@@ -17,5 +17,6 @@
     "email": "danreech@acme.org",
     "role": "admin",
     "passwordHash": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
-  }
+  },
+  { "id": 2, "name": "korir451", "email": "bkipkorir451@gmail.com", "role": "staff" }
 ]
